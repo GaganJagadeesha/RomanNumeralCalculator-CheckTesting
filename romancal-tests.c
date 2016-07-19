@@ -2,7 +2,8 @@
 #include <check.h>
 #include "romancal.h"
 #include <string.h> 
- 
+#define MAXIMUM_LENGTH	4096
+
 START_TEST(one_plus_one)
  {
 	char str1[] = "I";
@@ -53,6 +54,16 @@ START_TEST(nine_plus_two)
  }
  END_TEST
 
+START_TEST(ten_plus_thirty)
+ {
+	char str1[MAXIMUM_LENGTH] = "X";
+	char str2[MAXIMUM_LENGTH] = "XXX";
+	char strres[MAXIMUM_LENGTH] = "XL";
+        ck_assert_str_eq(strres,add(str1,str2));
+     
+ }
+ END_TEST
+
 Suite * roman_numeral_cal_suite(void)
 {
     Suite *s;
@@ -68,6 +79,7 @@ Suite * roman_numeral_cal_suite(void)
     tcase_add_test(tc_core, two_plus_two);
     tcase_add_test(tc_core, three_plus_two);
     tcase_add_test(tc_core, nine_plus_two);
+    tcase_add_test(tc_core, ten_plus_thirty);
     suite_add_tcase(s, tc_core);
 
     return s;
