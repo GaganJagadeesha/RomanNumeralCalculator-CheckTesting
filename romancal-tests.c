@@ -43,6 +43,16 @@ START_TEST(three_plus_two)
  }
  END_TEST
 
+START_TEST(nine_plus_two)
+ {
+	char str1[] = "IX";
+	char str2[] = "II";
+	char strres[] = "XI";  
+        ck_assert_str_eq(strres,add(str1,str2));
+     
+ }
+ END_TEST
+
 Suite * roman_numeral_cal_suite(void)
 {
     Suite *s;
@@ -57,6 +67,7 @@ Suite * roman_numeral_cal_suite(void)
     tcase_add_test(tc_core, one_plus_two);
     tcase_add_test(tc_core, two_plus_two);
     tcase_add_test(tc_core, three_plus_two);
+    tcase_add_test(tc_core, nine_plus_two);
     suite_add_tcase(s, tc_core);
 
     return s;
