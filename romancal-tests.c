@@ -64,6 +64,16 @@ START_TEST(ten_plus_thirty)
  }
  END_TEST
 
+START_TEST(hundred_plus_ninety)
+ {
+	char str1[MAXIMUM_LENGTH] = "C";
+	char str2[MAXIMUM_LENGTH] = "XC";
+	char strres[MAXIMUM_LENGTH] = "CXC";
+        ck_assert_str_eq(strres,add(str1,str2));
+     
+ }
+ END_TEST
+
 Suite * roman_numeral_cal_suite(void)
 {
     Suite *s;
@@ -80,6 +90,7 @@ Suite * roman_numeral_cal_suite(void)
     tcase_add_test(tc_core, three_plus_two);
     tcase_add_test(tc_core, nine_plus_two);
     tcase_add_test(tc_core, ten_plus_thirty);
+    tcase_add_test(tc_core, hundred_plus_ninety);
     suite_add_tcase(s, tc_core);
 
     return s;
