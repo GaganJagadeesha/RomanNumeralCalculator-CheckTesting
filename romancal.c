@@ -44,11 +44,13 @@ char* add(char* ori1, char* ori2) {
 	return ori1;
 }
 char* subtract(char* ori1, char* ori2) {
-	
+	expand(strrep,strwith,ori1);	//expand the first roman number
+	expand(strrep,strwith,ori2);	//expand the second roman number
 	int n;			
 	int m;
 	m = strlen(ori1);	//calculate the length of the string after expansion
 	n = strlen(ori2);
 	ori1[m-n]=0;	// Reduce the string lenght by the length of the number to be subtracted
+	compress(strwith,strrep,ori1);	//compress the string
 	return ori1;
 }
