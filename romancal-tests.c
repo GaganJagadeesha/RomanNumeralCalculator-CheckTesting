@@ -94,6 +94,16 @@ START_TEST(OneThousandFivehundred_plus_OneThousandOneHundred)
  }
  END_TEST
 
+START_TEST(two_minus_one)
+ {
+	char str1[] = "II";
+	char str2[] = "I";
+	char strres[] = "I";  
+        ck_assert_str_eq(strres,subtract(str1,str2));
+     
+ }
+ END_TEST
+
 Suite * roman_numeral_cal_suite(void)
 {
     Suite *s;
@@ -113,6 +123,7 @@ Suite * roman_numeral_cal_suite(void)
     tcase_add_test(tc_core, hundred_plus_ninety);
     tcase_add_test(tc_core, FivehundredThirtySix_plus_ninetyEight);
     tcase_add_test(tc_core, OneThousandFivehundred_plus_OneThousandOneHundred);
+    tcase_add_test(tc_core, two_minus_one);
     suite_add_tcase(s, tc_core);
 
     return s;

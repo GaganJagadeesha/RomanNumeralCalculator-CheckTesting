@@ -43,3 +43,12 @@ char* add(char* ori1, char* ori2) {
 	compress(strwith,strrep,ori1); // reduce the concatenated string to ROMAN Numeral form	
 	return ori1;
 }
+char* subtract(char* ori1, char* ori2) {
+	
+	int n;			
+	int m;
+	m = strlen(ori1);	//calculate the length of the string after expansion
+	n = strlen(ori2);
+	ori1[m-n]=0;	// Reduce the string lenght by the length of the number to be subtracted
+	return ori1;
+}
