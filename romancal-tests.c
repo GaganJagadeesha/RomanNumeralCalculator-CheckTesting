@@ -134,6 +134,16 @@ START_TEST(twentyOne_minus_eigth)
  }
  END_TEST
 
+START_TEST(Hundred_minus_thirtyFive)
+ {
+	char str1[MAXIMUM_LENGTH] = "C";
+	char str2[MAXIMUM_LENGTH] = "XXXV";
+	char strres[MAXIMUM_LENGTH] = "LXV";
+        ck_assert_str_eq(strres,subtract(str1,str2));
+     
+ }
+ END_TEST
+
 Suite * roman_numeral_cal_suite(void)
 {
     Suite *s;
@@ -157,6 +167,7 @@ Suite * roman_numeral_cal_suite(void)
     tcase_add_test(tc_core, three_minus_one);
     tcase_add_test(tc_core, six_minus_two);
     tcase_add_test(tc_core, twentyOne_minus_eigth);
+    tcase_add_test(tc_core, Hundred_minus_thirtyFive);
     suite_add_tcase(s, tc_core);
 
     return s;
